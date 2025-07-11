@@ -1,0 +1,14 @@
+# ── Python runtime ──────────────────────────────────
+__pycache__/
+*.py[cod]
+
+# ── Virtual-env you created in Week 1 ───────────────
+.venv/
+
+# ── Local settings & secrets (add real .env later) ─
+.env
+
+# ── Mac / editor cruft ──────────────────────────────
+.DS_Store
+.idea/
+.vscode/
