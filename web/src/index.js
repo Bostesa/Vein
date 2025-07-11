@@ -1,7 +1,9 @@
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.css'; // This is for global styles like fonts and Tailwind's base styles
+import App from './App.tsx'; // The only line that needs to be changed
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
