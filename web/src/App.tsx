@@ -25,20 +25,24 @@ export default function App() {
   };
 
   return (
-    <div className="h-screen w-screen bg-base-dark text-text-primary font-sans antialiased flex flex-col">
-      <Header />
-      <div className="flex flex-1 overflow-hidden">
+    <div className="h-screen w-screen bg-base-dark text-text-primary font-sans antialiased flex">
+        {/* Sidebar is now part of the main flex container */}
         <Sidebar 
           currentPage={currentPage} 
           setCurrentPage={setCurrentPage}
           onCashOutClick={() => setIsCashOutModalOpen(true)}
         />
-        <main className="flex-1 p-8 overflow-y-auto">
-          {renderPage()}
-        </main>
-      </div>
-      
-      {/* Global components */}
+        
+        <div className="flex-1 flex flex-col overflow-hidden">
+            {/* Header is now inside the main content column */}
+            <Header />
+            
+            <main className="flex-1 p-8 overflow-y-auto">
+                {renderPage()}
+            </main>
+        </div>
+
+      {/* Global components that live outside the main layout flow */}
       <Toaster 
         position="bottom-right" 
         toastOptions={{ style: { background: '#111', color: '#fff', border: '1px solid #333' } }} 

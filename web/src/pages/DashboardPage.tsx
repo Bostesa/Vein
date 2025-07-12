@@ -15,6 +15,11 @@ const initialInvoices: Invoice[] = [
     { id: 'inv_1', vendor: 'Vercel', amount: 99.00, dueDate: '2025-07-15', status: 'Paid', risk: 10 },
     { id: 'inv_2', vendor: 'OpenAI', amount: 150.00, dueDate: '2025-07-20', status: 'Pending Approval', risk: 45 },
     { id: 'inv_3', vendor: 'Figma', amount: 450.00, dueDate: '2025-08-01', status: 'Scheduled', risk: 25 },
+    { id: 'inv_4', vendor: 'Slack', amount: 75.00, dueDate: '2025-08-05', status: 'Pending Approval', risk: 80 },
+    { id: 'inv_5', vendor: 'AWS', amount: 200.00, dueDate: '2025-08-10', status: 'Paid', risk: 20 },
+    { id: 'inv_6', vendor: 'Stripe', amount: 300.00, dueDate: '2025-08-15', status: 'Pending Approval', risk: 50 },
+    { id: 'inv_7', vendor: 'Google Workspace', amount: 120.00, dueDate: '2025-08-20', status: 'Paid', risk: 85 },
+    { id: 'inv_8', vendor: 'Zoom', amount: 60.00, dueDate: '2025-08-25', status: 'Pending Approval', risk: 25 },    
 ];
 const mockCashFlow7Day: CashFlowData[] = [{ name: 'M', flow: 12000 }, { name: 'T', flow: -3400 }, { name: 'W', flow: 8500 }, { name: 'T', flow: 15000 }, { name: 'F', flow: -7600 }, { name: 'S', flow: 2000 }, { name: 'S', flow: 500 }];
 
