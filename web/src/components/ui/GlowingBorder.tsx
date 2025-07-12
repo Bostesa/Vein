@@ -1,6 +1,11 @@
 import React from 'react';
 
-const GlowingBorder = ({ side = 'top', color = 'red' }) => {
+interface GlowingBorderProps {
+  side?: 'top' | 'left';
+  color?: 'red' | 'blue';
+}
+
+const GlowingBorder: React.FC<GlowingBorderProps> = ({ side = 'top', color = 'red' }) => {
     const positions = {
         top: 'top-0 left-0 right-0 h-[1px]',
         left: 'top-0 bottom-0 left-0 w-[1px]',
@@ -16,4 +21,4 @@ const GlowingBorder = ({ side = 'top', color = 'red' }) => {
     );
 };
 
-export { GlowingBorder };
+export default GlowingBorder;

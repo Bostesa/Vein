@@ -1,8 +1,13 @@
 import React from 'react';
-import { Card } from '../ui/Card';
+import Card from '../ui/Card';
 import { formatCurrency } from '../../lib/utils';
+import { Account } from '../../lib/types'; // Import the type
 
-const AccountsTable = ({ accounts }) => {
+interface AccountsTableProps {
+  accounts: Account[];
+}
+
+const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
     return (
         <Card>
             <h3 className="text-base font-semibold text-white mb-4">Connected Accounts</h3>
@@ -15,7 +20,7 @@ const AccountsTable = ({ accounts }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {accounts.map(account => (
+                        {accounts.map((account) => (
                             <tr key={account.id} className="border-b border-slate-800/50 hover:bg-slate-800/20">
                                 <td className="p-3 text-white font-medium">
                                     {account.name}
@@ -28,7 +33,7 @@ const AccountsTable = ({ accounts }) => {
                         ))}
                          {accounts.length === 0 && (
                             <tr>
-                                <td colSpan="2" className="p-4 text-center text-slate-500">
+                                <td colSpan={2} className="p-4 text-center text-slate-500">
                                     No accounts connected.
                                 </td>
                             </tr>
@@ -40,4 +45,4 @@ const AccountsTable = ({ accounts }) => {
     );
 };
 
-export { AccountsTable };
+export default AccountsTable;

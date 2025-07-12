@@ -1,12 +1,16 @@
 import React, { useMemo } from 'react';
-import { Card } from '../ui/Card';
-import { GlowingBorder } from '../ui/GlowingBorder';
+import Card from '../ui/Card';
+import GlowingBorder from '../ui/GlowingBorder';
 import { formatCurrency } from '../../lib/utils';
+import { Account } from '../../lib/types'; // Import the type
 
-const TotalCashCard = ({ accounts }) => {
-    // useMemo ensures this calculation only re-runs when the accounts array changes.
+interface TotalCashCardProps {
+  accounts: Account[];
+}
+
+const TotalCashCard: React.FC<TotalCashCardProps> = ({ accounts }) => {
     const totalCash = useMemo(() => 
-        accounts.reduce((sum, acc) => sum + acc.balance, 0), 
+        accounts.reduce((sum: number, acc: Account) => sum + acc.balance, 0), 
         [accounts]
     );
 
@@ -20,4 +24,4 @@ const TotalCashCard = ({ accounts }) => {
     );
 };
 
-export { TotalCashCard };
+export default TotalCashCard;

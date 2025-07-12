@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from '../ui/Card';
+import Card from '../ui/Card';
 
 const AutoCreditCard = () => {
     const [isAutoCredit, setIsAutoCredit] = useState(false);
@@ -27,4 +27,4 @@ const AutoCreditCard = () => {
     );
 };
 
-export { AutoCreditCard };
+export default AutoCreditCard ;

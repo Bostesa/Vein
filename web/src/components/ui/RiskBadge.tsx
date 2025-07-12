@@ -1,7 +1,11 @@
 import React from 'react';
 
-const RiskBadge = ({ score }) => {
-    const getRiskInfo = (score) => {
+interface RiskBadgeProps {
+  score: number;
+}
+
+const RiskBadge: React.FC<RiskBadgeProps> = ({ score }) => {
+    const getRiskInfo = (score: number) => {
         if (score <= 40) return { color: 'bg-green-500/10 text-green-400', text: 'Low' };
         if (score <= 70) return { color: 'bg-yellow-500/10 text-yellow-400', text: 'Medium' };
         return { color: 'bg-red-500/10 text-red-400', text: 'High' };
@@ -16,4 +20,4 @@ const RiskBadge = ({ score }) => {
     );
 };
 
-export { RiskBadge };
+export default RiskBadge;

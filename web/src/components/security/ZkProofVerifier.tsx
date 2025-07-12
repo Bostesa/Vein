@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Card } from '../ui/Card';
-import { Spinner } from '../ui/Spinner';
+import Card from '../ui/Card';
+import Spinner from '../ui/Spinner';
 import { IconCheckCircle, IconXCircle } from '../../lib/icons';
 
-const ZkProofVerifier = () => {
+type VerificationStatus = 'Valid' | 'Invalid' | null;
+
+const ZkProofVerifier: React.FC = () => {
     const [isVerifying, setIsVerifying] = useState(false);
-    const [verificationResult, setVerificationResult] = useState(null); // 'Valid' | 'Invalid' | null
+    const [verificationResult, setVerificationResult] = useState<VerificationStatus>(null);
 
     const handleVerify = () => {
         setIsVerifying(true);
         setVerificationResult(null);
-        // Simulate a call to a ZK verification library like snarkjs
         setTimeout(() => {
-            const isValid = Math.random() > 0.2; // 80% chance of success for demo
+            const isValid = Math.random() > 0.2;
             setVerificationResult(isValid ? 'Valid' : 'Invalid');
             setIsVerifying(false);
         }, 2000);
@@ -42,4 +43,4 @@ const ZkProofVerifier = () => {
     );
 };
 
-export { ZkProofVerifier };
+export default ZkProofVerifier;

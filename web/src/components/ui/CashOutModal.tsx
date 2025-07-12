@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { Modal } from './Modal';
-import { Spinner } from './Spinner';
+import Modal from './Modal';
+import Spinner from './Spinner';
 import { IconMic } from '../../lib/icons';
 
-const CashOutModal = ({ isOpen, onClose }) => {
+interface CashOutModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const CashOutModal: React.FC<CashOutModalProps> = ({ isOpen, onClose }) => {
     const [amount, setAmount] = useState('300');
     const [isProcessing, setIsProcessing] = useState(false);
     
@@ -12,10 +17,8 @@ const CashOutModal = ({ isOpen, onClose }) => {
         if (isProcessing) return;
         
         setIsProcessing(true);
-        // Simulate biometric auth for amounts > $500
         if (parseFloat(amount) > 500) {
             toast('Biometric authentication required for amounts over $500.');
-            // In a real app, you would trigger the WebAuthn API here.
         }
 
         setTimeout(() => {
@@ -33,7 +36,6 @@ const CashOutModal = ({ isOpen, onClose }) => {
                 </div>
                 <h3 className="text-lg font-semibold text-white">Voice Cash Out</h3>
                 <p className="text-sm text-slate-400 mt-1">Say "cashout" followed by an amount, or enter it manually.</p>
-                
                 <div className="my-6">
                     <input 
                         type="number" 
@@ -43,7 +45,6 @@ const CashOutModal = ({ isOpen, onClose }) => {
                         placeholder="0"
                     />
                 </div>
-
                 <button 
                     onClick={handleCashOut} 
                     disabled={isProcessing || !amount || parseFloat(amount) <= 0} 
@@ -57,4 +58,4 @@ const CashOutModal = ({ isOpen, onClose }) => {
     );
 };
 
-export { CashOutModal };
+export default CashOutModal;

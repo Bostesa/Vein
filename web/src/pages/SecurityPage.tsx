@@ -1,6 +1,6 @@
 import React from 'react';
-import { PageTitle } from '../components/layout/PageTitle';
-import { ZkProofVerifier } from '../components/security/ZkProofVerifier';
+import  PageTitle  from '../components/layout/PageTitle';
+import  ZkProofVerifier  from '../components/security/ZkProofVerifier';
 
 const SecurityPage = () => (
     <>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { Card } from '../ui/Card';
-import { Spinner } from '../ui/Spinner';
+import Card from '../ui/Card';
+import Spinner  from '../ui/Spinner';
 
 const AuditExportCard = () => {
     const [isExporting, setIsExporting] = useState(false);
